@@ -7,7 +7,7 @@ class Clientes(models.Model):
     tel = models.CharField(unique=True, max_length=10)
     email = models.EmailField(unique=True, max_length=100)
     face = models.URLField(unique=True, max_length=500, blank=True, null=True)
-    event = models.ForeignKey(Evento, blank=True,null=True)
+    event = models.ForeignKey(Evento,null=True, related_name='client')
 
     class Meta:
         ordering = ("nombre",)

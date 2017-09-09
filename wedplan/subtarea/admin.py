@@ -1,3 +1,7 @@
 from django.contrib import admin
+from .models import SubTarea
 
-# Register your models here.
+class SubTareaAdmin(admin.ModelAdmin):
+    pass
+
+admin.site.register(SubTarea, SubTareaAdmin)

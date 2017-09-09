@@ -6,7 +6,7 @@ class Servicios(models.Model):
     nombre = models.CharField(max_length=100)
     unidad = models.CharField(max_length=100,blank=True)
     costo_u = models.IntegerField()
-    prov = models.ManyToManyField(Proveedor, blank=True)
+    prov = models.ManyToManyField(Proveedor, blank=True, related_name='serv')
 
     class Meta:
         ordering = ("nombre",)

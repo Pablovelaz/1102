@@ -9,7 +9,7 @@ class Tarea(models.Model):
     fplaneado = models.DateTimeField()
     fcompletado = models.DateTimeField(null=True,blank=True)
     completado = models.BooleanField(default=False)
-    prov = models.ManyToManyField(Proveedor, blank=True)
+    prov = models.ManyToManyField(Proveedor, blank=True,related_name='tarea')
 
     class Meta:
         ordering = ("fplaneado",)

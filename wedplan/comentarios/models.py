@@ -4,7 +4,7 @@ from tarea.models import Tarea
 class Comentario(models.Model):
     id = models.AutoField(primary_key=True)
     coment = models.TextField(blank=True)
-    tar = models.ForeignKey(Tarea, blank=True,null=True)
+    tar = models.ForeignKey(Tarea, null=True, related_name='coment')
 
     class Meta:
         ordering = ("id",)

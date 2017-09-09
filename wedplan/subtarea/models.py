@@ -9,7 +9,7 @@ class SubTarea(models.Model):
     fplaneado = models.DateTimeField()
     fcompletado = models.DateTimeField(null=True,blank=True)
     completado = models.BooleanField(default=False)
-    tar = models.ForeignKey(Tarea, blank=True,null=True)
+    tar = models.ForeignKey(Tarea, null=True, related_name='sub_tarea')
 
     class Meta:
         ordering = ("nombre",)

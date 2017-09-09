@@ -14,7 +14,7 @@ class Evento(models.Model):
     fecha = models.DateTimeField()
     lugar = models.CharField(max_length=300)
     croquis = models.ImageField(upload_to = user_directory_path,blank=True)
-    usuario = models.ForeignKey(User, blank=True,null=True)
+    usuario = models.ForeignKey(User,null=True,related_name='event')
 
     class Meta:
         ordering = ("nombre",)

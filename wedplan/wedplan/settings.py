@@ -25,7 +25,7 @@ SECRET_KEY = '4xo@r+m+n1x@a4xtab^nl-5rkin+xyzi(u_#$*lastn6o8kr$x'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -138,12 +138,20 @@ AUTH_USER_MODEL = 'user.User'
 STATIC_URL = '/static/'
 
 CORS_ALLOW_METHODS = (
-    'DELETE',
     'GET',
-    'OPTIONS',
-    'PATCH',
     'POST',
     'PUT',
 )
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+# REST_FRAMEWORK = {
+#     'DEFAULT_PERMISSION_CLASSES': (
+#         'rest_framework.permissions.IsAuthenticated',
+#     ),
+#     'DEFAULT_AUTHENTICATION_CLASSES': (
+#         'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+#         'rest_framework.authentication.SessionAuthentication',
+#         'rest_framework.authentication.BasicAuthentication',
+#     ),
+# }

@@ -8,7 +8,7 @@ class Proveedor(models.Model):
     email = models.EmailField(unique=True, max_length=100)
     pagina = models.URLField(blank=True)
     giro = models.CharField(max_length=100)
-    event = models.ManyToManyField(Evento, blank=True)
+    event = models.ManyToManyField(Evento, blank=True, related_name='prov')
 
     class Meta:
         ordering = ("giro",)

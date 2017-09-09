@@ -1,3 +1,7 @@
 from django.contrib import admin
+from .models import Comentario
 
-# Register your models here.
+class ComentarioAdmin(admin.ModelAdmin):
+    pass
+
+admin.site.register(Comentario, ComentarioAdmin)
